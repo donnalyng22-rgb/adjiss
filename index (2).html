@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>ADJISS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<a href="#customer-system" class="skip-link">Skip to Customer System</a>
+
+<!-- ==========================
+     LOADING SCREEN
+     Mabilis lang ito (~500ms) - hindi katulad ng full
+     "boot" animation, dahil admin tool to na binibisita
+     paulit-ulit, ayaw natin maantala ang totoong trabaho.
+     Purpose lang nito is maiwasan ang flash-of-unstyled
+     background image bago mag-fade in ang buong site.
+========================== -->
+
+<div id="loadingScreen" class="loading-screen" aria-hidden="true">
+    <div class="loading-screen__mark">ADJISS</div>
+    <div class="loading-screen__bar"><span></span></div>
+</div>
+
+
+<!-- ==========================
+     HEADER
+========================== -->
+
+<header>
+
+    <div class="header-container">
+
+        <div class="logo">
+
+            <img src="images/logo.png" alt="ADJISS Logo" class="logo-img">
+
+            <div class="logo-text">
+
+                <h1>ADJISS</h1>
+
+                <p>Integrated Systems Solutions</p>
+
+            </div>
+
+        </div>
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="headerSearch"
+                placeholder="Search Customers... (press /)"
+                aria-label="Search customers">
+
+        </div>
+
+        <nav id="mainNav">
+
+            <a href="#home" class="nav-link" data-section="home">Home</a>
+
+            <a href="#customer-system" class="nav-link" data-section="customer-system">Customers</a>
+
+            <a href="#about" class="nav-link" data-section="about">About</a>
+
+            <a href="#contact" class="nav-link" data-section="contact">Contact</a>
+
+            <div class="accent-switch" id="accentSwitch" title="Change accent color" role="group" aria-label="Change accent color">
+                <button class="accent-dot" data-accent="ocean" aria-label="Ocean Blue accent"></button>
+                <button class="accent-dot" data-accent="emerald" aria-label="Emerald accent"></button>
+                <button class="accent-dot" data-accent="indigo" aria-label="Indigo accent"></button>
+                <button class="accent-dot" data-accent="magenta" aria-label="Magenta accent"></button>
+            </div>
+
+            <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle dark or light mode" title="Toggle dark/light mode">🌙</button>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- ==========================
+     HERO
+========================== -->
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h2>
+            Innovate Today.
+            <br>
+            Lead Tomorrow.
+        </h2>
+
+        <p id="heroQuote">
+            Integrated Systems for a Smarter Business.
+        </p>
+
+        <a href="#customer-system">Get Started</a>
+
+        <div class="hero-info">
+
+            <p class="detail-trigger" data-detail="trusted" tabindex="0" role="button" aria-haspopup="dialog">💼 Trusted Business Solutions</p>
+            <p class="detail-trigger" data-detail="secure" tabindex="0" role="button" aria-haspopup="dialog">🔒 Secure Data Management</p>
+            <p class="detail-trigger" data-detail="fast" tabindex="0" role="button" aria-haspopup="dialog">⚡ Fast & Reliable Systems</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     WHY CHOOSE ADJISS
+========================== -->
+
+<section class="features">
+
+    <h2>
+
+        Why Choose ADJISS?
+
+    </h2>
+
+    <div class="feature-container">
+
+        <div class="feature-card detail-trigger" data-detail="feature-secure" tabindex="0" role="button" aria-haspopup="dialog">
+
+            <h3>🔒 Secure</h3>
+
+            <p>
+
+                Protect customer information
+                with a secure management system.
+
+            </p>
+
+            <span class="detail-hint">Tap to read more →</span>
+
+        </div>
+
+        <div class="feature-card detail-trigger" data-detail="feature-fast" tabindex="0" role="button" aria-haspopup="dialog">
+
+            <h3>⚡ Fast</h3>
+
+            <p>
+
+                Quickly manage customer records
+                anytime and anywhere.
+
+            </p>
+
+            <span class="detail-hint">Tap to read more →</span>
+
+        </div>
+
+        <div class="feature-card detail-trigger" data-detail="feature-reliable" tabindex="0" role="button" aria-haspopup="dialog">
+
+            <h3>💼 Reliable</h3>
+
+            <p>
+
+                Designed to help businesses
+                organize information efficiently.
+
+            </p>
+
+            <span class="detail-hint">Tap to read more →</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     CUSTOMER INFORMATION MANAGEMENT SYSTEM
+========================== -->
+
+<section
+    id="customer-system"
+    class="customer-system">
+
+    <h2>
+
+        Customer Information Management System
+
+    </h2>
+
+    <!-- ==========================
+         CUSTOMER REGISTRATION FORM
+    ========================== -->
+
+    <div class="customer-form-container">
+
+        <h3>
+
+            Add New Customer
+
+        </h3>
+
+        <form id="customerForm">
+
+            <label for="fullName">
+
+                Full Name
+
+            </label>
+
+            <input
+                type="text"
+                id="fullName"
+                name="full_name"
+                placeholder="Enter Full Name"
+                required>
+
+                <label for="email">
+
+    Email Address
+
+</label>
+
+<input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Enter Email Address"
+    required>
+
+<span class="error-message" id="emailError"></span>
+
+<label for="contactNumber">
+
+    Contact Number
+
+</label>
+
+<input
+    type="text"
+    id="contactNumber"
+    name="contact_number"
+    placeholder="Enter Contact Number"
+    required>
+
+<span class="error-message" id="contactError"></span>
+
+            <label for="address">
+
+                Address
+
+            </label>
+
+            <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Enter Address"
+                required>
+
+           <label for="profileImage">
+
+    Profile Image
+
+</label>
+
+<!-- Image Preview -->
+
+<div class="image-preview">
+
+    <img
+        id="previewImage"
+        src="images/default-profile.png"
+        alt="Profile Preview">
+
+</div>
+
+<input
+    type="file"
+    id="profileImage"
+    name="profile_image"
+    accept="image/*">
+
+            <div class="form-btn-row">
+
+                <button type="submit" id="formSubmitBtn">
+
+                    Add Customer
+
+                </button>
+
+                <button type="button" id="cancelEditBtn" class="cancel-edit-btn" hidden>
+
+                    Cancel
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+    <!-- ==========================
+         CUSTOMER SEARCH
+    ========================== -->
+
+    <div class="customer-search">
+
+        <h3>
+
+            Search Customer
+
+        </h3>
+
+        <input
+            type="text"
+            id="customerSearch"
+            placeholder="Search customer by name..."
+            aria-label="Search customer by name or email">
+
+    </div>
+
+    <!-- ==========================
+         CUSTOMER RECORDS
+    ========================== -->
+
+    <div class="customer-table-container">
+
+        <div class="table-actions">
+
+            <button type="button" id="exportCsvBtn" class="table-action-btn">⬇ Export CSV</button>
+
+            <button type="button" id="printTableBtn" class="table-action-btn">🖨 Print</button>
+
+        </div>
+
+        <table id="customerTable">
+
+            <thead>
+
+                <tr>
+
+                    <th data-sort="id" class="sortable" aria-sort="none" tabindex="0" role="columnheader" aria-roledescription="sortable">ID <span class="sort-icon">⇅</span></th>
+
+                    <th>Profile</th>
+
+                    <th data-sort="fullName" class="sortable" aria-sort="none" tabindex="0" role="columnheader" aria-roledescription="sortable">Full Name <span class="sort-icon">⇅</span></th>
+
+                    <th data-sort="email" class="sortable" aria-sort="none" tabindex="0" role="columnheader" aria-roledescription="sortable">Email <span class="sort-icon">⇅</span></th>
+
+                    <th data-sort="contactNumber" class="sortable" aria-sort="none" tabindex="0" role="columnheader" aria-roledescription="sortable">Contact Number <span class="sort-icon">⇅</span></th>
+
+                    <th data-sort="address" class="sortable" aria-sort="none" tabindex="0" role="columnheader" aria-roledescription="sortable">Address <span class="sort-icon">⇅</span></th>
+
+                    <th>Actions</th>
+
+                </tr>
+
+            </thead>
+
+                <tbody id="customerTableBody">
+
+
+        </table>
+
+        <!-- ==========================
+             PAGINATION
+        ========================== -->
+
+        <div id="paginationControls" class="pagination-controls"></div>
+
+    </div>
+
+    <!-- ==========================
+         CUSTOMER REPORT
+    ========================== -->
+
+    <div class="customer-report">
+
+        <div class="report-card">
+
+            <h3>
+
+                Total Customers
+
+            </h3>
+
+            <p id="totalCustomers">
+
+                0
+
+            </p>
+
+        </div>
+
+        <div class="report-card report-card--accent">
+
+            <h3>
+
+                Added Today
+
+            </h3>
+
+            <p id="addedToday">
+
+                0
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     ABOUT
+========================== -->
+
+<section
+    id="about"
+    class="about">
+
+    <h2>
+
+        About ADJISS
+
+    </h2>
+
+    <div class="about-intro">
+
+        <p>
+            ADJISS (AJ, Donna, Justin Integrated Systems Solutions)
+            provides a modern Customer Information Management System
+            designed to help businesses organize, manage, and secure
+            customer records efficiently.
+        </p>
+
+    </div>
+
+    <div class="about-container">
+
+        <div class="about-card detail-trigger" data-detail="mission" tabindex="0" role="button" aria-haspopup="dialog">
+
+            <h3>
+
+                🎯 Mission
+
+            </h3>
+
+            <p>
+
+                To provide businesses with reliable and
+                user-friendly information management
+                solutions that improve productivity and
+                simplify daily operations.
+
+            </p>
+
+            <span class="detail-hint">Tap to read more →</span>
+
+        </div>
+
+        <div class="about-card detail-trigger" data-detail="vision" tabindex="0" role="button" aria-haspopup="dialog">
+
+            <h3>
+
+                👁 Vision
+
+            </h3>
+
+            <p>
+
+                To become a trusted provider of
+                integrated information systems through
+                innovation, security, and technology.
+
+            </p>
+
+            <span class="detail-hint">Tap to read more →</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     CONTACT
+========================== -->
+
+<section
+    id="contact"
+    class="contact">
+
+    <h2>
+
+        Contact Us
+
+    </h2>
+
+    <p>
+
+        Send us your inquiries or feedback.
+
+    </p>
+
+    <div class="contact-wrapper">
+
+        <form id="contactForm">
+
+            <input
+                type="text"
+                id="contactName"
+                placeholder="Your Name"
+                required>
+
+            <input
+    type="email"
+    id="contactEmail"
+    placeholder="Email Address"
+    required>
+
+<span class="error-message" id="contactEmailError"></span>
+
+            <input
+                type="text"
+                id="contactSubject"
+                placeholder="Subject"
+                required>
+
+            <textarea
+                id="contactMessage"
+                placeholder="Write your message..."
+                maxlength="500"
+                required></textarea>
+
+            <span class="char-counter" id="messageCounter">0 / 500</span>
+
+            <button type="submit">
+
+                Send Message
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ==========================
+     FOOTER
+========================== -->
+
+<footer>
+
+    <p>
+
+        © 2026 ADJISS.
+        All Rights Reserved.
+
+    </p>
+
+    <p>
+
+        Customer Information Management System
+
+    </p>
+
+</footer>
+
+<!-- ==========================
+     DELETE CONFIRMATION MODAL
+========================== -->
+
+<div id="confirmModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="confirmModalTitle" hidden>
+
+    <div class="modal-box">
+
+        <h3 id="confirmModalTitle">Delete Customer</h3>
+
+        <p id="confirmModalMessage">Are you sure you want to delete this customer?</p>
+
+        <div class="modal-actions">
+
+            <button type="button" id="confirmCancelBtn" class="modal-btn modal-btn-secondary">Cancel</button>
+
+            <button type="button" id="confirmDeleteBtn" class="modal-btn modal-btn-danger">Delete</button>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+     INFO DETAIL MODAL
+     Ginagamit ng hero-info cards, "Why Choose ADJISS"
+     feature-cards, at Mission/Vision cards - click lang
+     ng kahit alin sa mga iyon, dito lalabas ang buong
+     detail. Content nito ay galing sa DETAILS object sa
+     script.js, hindi kailangan gumawa ng bagong modal
+     per card.
+========================== -->
+
+<div id="detailModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="detailModalTitle" hidden>
+
+    <div class="modal-box modal-box--detail">
+
+        <button type="button" class="modal-close" id="detailModalClose" aria-label="Close">&times;</button>
+
+        <span class="modal-box__icon" id="detailModalIcon"></span>
+
+        <h3 id="detailModalTitle">Detail Title</h3>
+
+        <p id="detailModalBody">Detail body text.</p>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+     CUSTOMER VIEW-DETAILS MODAL
+     Bagong modal na ito - hiwalay sa Edit form. Click
+     "View" sa kahit anong row ng table para makita ang
+     buong profile nang hindi kailangan pumasok sa edit
+     mode (na sensitive dahil doon rin gumagana ang Delete
+     confirmation at Update button).
+========================== -->
+
+<div id="customerViewModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="viewModalTitle" hidden>
+
+    <div class="modal-box modal-box--profile">
+
+        <button type="button" class="modal-close" id="viewModalClose" aria-label="Close">&times;</button>
+
+        <img id="viewModalImage" class="modal-box__avatar" src="images/default-profile.png" alt="">
+
+        <h3 id="viewModalTitle">Customer Name</h3>
+        <p class="modal-box__id" id="viewModalId">Customer ID: —</p>
+
+        <dl class="profile-detail-list">
+            <div><dt>Email</dt><dd id="viewModalEmail">—</dd></div>
+            <div><dt>Contact Number</dt><dd id="viewModalContact">—</dd></div>
+            <div><dt>Address</dt><dd id="viewModalAddress">—</dd></div>
+            <div><dt>Date Added</dt><dd id="viewModalDate">—</dd></div>
+        </dl>
+
+        <div class="modal-actions">
+            <button type="button" class="modal-btn modal-btn-secondary" id="viewModalCloseBtn">Close</button>
+            <button type="button" class="modal-btn modal-btn-primary" id="viewModalEditBtn">Edit This Customer</button>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ==========================
+     SCROLL TO TOP
+========================== -->
+
+<button id="scrollTopBtn" class="scroll-top" type="button" aria-label="Scroll to top" hidden>▲</button>
+
+<!-- ==========================
+     TOAST NOTIFICATION
+========================== -->
+
+<div id="toastContainer" class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+<!-- ==========================
+     JAVASCRIPT
+========================== -->
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
